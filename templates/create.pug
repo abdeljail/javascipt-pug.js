@@ -1,0 +1,56 @@
+//- include file head
+include ../layouts/_start.pug
+script(src="../js/auth.a.js" type="module" async="async" rel="preload")
+link(rel="preload" href="../js/auth.a.js" as="script")
+//- name page
+-let nameTitle = "create account ";
+//- array src links
+-let srcLinks = ["style" , "create"];
+
+//- include file head
+include ../layouts/_head.pug
+
+//- include file links
+include ../layouts/_links.pug
+
+//- include file body
+include ../layouts/_body.pug
+
+    //- content page
+    div(class="page-create")
+        form(action="" method="post")
+            .content-form
+                //- include file alertShow
+                include ../components/alerts/_alertShow.close.pug
+                div 
+                    h1 application
+                div 
+                    h2 create account
+                -let infoInput = [ "input" , "Full name" , "l-name" , "text" ]
+                //- include file input
+                include ../components/forms/_input.pug
+                - infoInput = [ "input" , "phone" , "l-phone" , "tel" ]
+                //- include file input
+                include ../components/forms/_input.pug
+                - infoInput = [ "input" , "email" , "l-email" , "email" ]
+                //- include file input
+                include ../components/forms/_input.pug
+                - infoInput = [ "input" , "password" , "l-password" , "password" ]
+                //- include file input
+                include ../components/forms/_input.pug
+                -let textLink = [ "Already have an account?" , "sing in here" , "login.html" ]
+                //- include file textLink
+                include ../components/forms/_textLink.pug
+                // b-c button-spiner
+                -let infoButton = [ "button b-1" , "l-send" , "button" , "create account" ]
+                //- include file header
+                include ../components/forms/_button.pug
+
+//- array src scripts
+-let srcScripts = ["helpers/functions/classCss/hasClass.m" , "helpers/functions/classCss/addClass.m","helpers/functions/classCss/removeClass.m" , "create"];
+
+//- include file scripts
+include ../layouts/_scripts.pug
+
+//- include file end
+include ../layouts/_end.pug

@@ -1,0 +1,51 @@
+//- include file head
+include ../layouts/_start.pug
+
+//- name page
+-let nameTitle = "login ";
+//- array src links
+-let srcLinks = ["style" , "login"];
+
+//- include file head
+include ../layouts/_head.pug
+
+//- include file links
+include ../layouts/_links.pug
+
+//- include file body
+include ../layouts/_body.pug
+
+    //- content page
+    div(class="page-login")
+        form(action="" method="post")
+            .content-form
+                //- include file alertShow
+                include ../components/alerts/_alertShow.close.pug
+                div 
+                    h1 application
+                div 
+                    h2 login
+                -let infoInput = [ "input" , "email" , "l-email" , "email" ]
+                //- include file input
+                include ../components/forms/_input.pug
+                - infoInput = [ "input" , "password" , "l-password" , "password" ]
+                //- include file input
+                include ../components/forms/_input.pug
+                -let textLink = [ "Don't have an account yet?" , "sing up here" , "create.html" ]
+                //- include file textLink
+                include ../components/forms/_textLink.pug
+                // b-c button-spiner
+                -let infoButton = [ "button b-1" , "l-send" , "button" , "login" ]
+                //- include file header
+                include ../components/forms/_button.pug
+
+
+
+//- array src scripts
+-let srcScripts = ["helpers/functions/classCss/hasClass.m" , "helpers/functions/classCss/addClass.m","helpers/functions/classCss/removeClass.m" , "login"];
+
+//- include file scripts
+include ../layouts/_scripts.pug
+
+//- include file end
+include ../layouts/_end.pug
