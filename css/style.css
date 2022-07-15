@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300&family=Roboto:wght@100&display=swap');
+
+:root {
+    --text-1: #EF271B;
+    --text-2: #000000;
+    --text-3: #222831;
+    --text-4: #73777B;
+    --text-5: #FFFFFF;
+    --text-7: #3ddd97;
+    --text-danger: #842029;
+    --bg-danger: #f8d7da;
+    --bg-hover-1: #f16059;
+    --border: #d7d7d7;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Hind', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    user-select: none;
+}
+
+body {
+    background-color: #fdfdfd;
+    font-size: 16px;
+    height: 100vh;
+    user-select: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+button:focus,
+button:active,
+button,
+input,
+textarea {
+    padding: 10px 20px;
+    border: 1px solid;
+    border-radius: 6px;
+    background-color: transparent;
+    outline: 0;
+    display: block;
+    color: var(--text-3);
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--text-2);
+    background-color: var(--text-5);
+}
+
+button {
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+button.button {
+    color: var(--text-5);
+    font-weight: bold;
+    border-radius: 40px;
+    transition: background-color .3s ease-in;
+    min-width: 100px;
+    min-height: calc(40px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button.button.b-1:hover {
+    background-color: var(--bg-hover-1);
+}
+
+button.button.b-1 {
+    background-color: var(--text-1);
+}
+
+button.button.button-spiner {
+    position: relative;
+    cursor: not-allowed;
+}
+
+button.button::after {
+    content: attr(data-button);
+}
+
+button.button.button-spiner::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    animation: spiner .65s linear infinite;
+}
+
+button.button.button-spiner.b-c::after {
+    background-color: var(--text-1);
+    border: 6px solid var(--text-5);
+    border-left-color: var(--bg-hover-1);
+}
+
+@keyframes spiner {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

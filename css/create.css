@@ -1,0 +1,140 @@
+.body-await {
+    position: relative;
+}
+
+.body-await::after {
+    top: 0;
+    left: 0;
+    position: absolute;
+    content: "";
+    width: 100vw;
+    height: 100vh;
+    background-color:#f1615931;
+    z-index: 45;
+}
+
+.page-create,
+form,
+form>div {
+    height: inherit;
+}
+
+.content-form {
+    background-color: var(--text-5);
+    width: 400px;
+    margin: 0 auto;
+    padding: 0 20px 100px 20px;
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    position: relative;
+}
+
+h1 {
+    padding-top: 100px;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--text-1);
+}
+
+h2 {
+    text-transform: capitalize;
+    padding: 50px 0 30px 0px;
+    text-align: center;
+    color: var(--text-3);
+}
+
+form button {
+    width: 100%;
+}
+
+label {
+    margin-bottom: 10px;
+    display: block;
+    text-transform: capitalize;
+    font-size: 17px;
+    font-weight: bold;
+    color: var(--text-4);
+}
+
+.input {
+    width: 100%;
+    border-color: var(--border);
+    margin-bottom: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #f0f2f4;
+}
+
+.btn-sd {
+    margin-top: 40px;
+}
+
+.btn-sd button {
+    font-size: 18px;
+    height: calc(60px)
+}
+
+.change-fm {
+    margin-top: 20px;
+    margin-left: 4px;
+}
+
+.change-fm * {
+    font-size: 14px !important;
+}
+
+.change-fm>span {
+    color: var(--text-3)
+}
+
+.change-fm a {
+    color: var(--text-1)
+}
+
+
+.err-input {
+    border-color: var(--text-danger);
+    color: var(--text-danger);
+    background-color: var(--bg-danger);
+}
+
+.alert-close {
+    position: absolute;
+    width: calc(100%);
+    height: max-content;
+    background-color: var(--text-2);
+    top: -300px;
+    left: 0;
+    transition: .4s ease-in-out;
+}
+
+.alert-close.show {
+    top: -2px;
+}
+
+.alert-close .header-alert {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.alert-close .header-alert h6 {
+    color: var(--text-5);
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.alert-close i {
+    font-size: 20px;
+    color: var(--text-1);
+    cursor: pointer;
+}
+
+.alert-close .body-alert {
+    padding: 10px 0;
+}
+
+.alert-close .body-alert * {
+    color: var(--text-5);
+    padding: 10px 20px;
+}
