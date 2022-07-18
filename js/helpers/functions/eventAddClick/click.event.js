@@ -22,6 +22,36 @@ function clickElement({ element, fun }) {
 }
 
 
+/**
+ *  this method is  when the Element is add event listener  Click
+ *  element required element to listener Click
+ *  fun required multiple function for excute on click in array 
+ */
+
+function clickElementFunctions({ element, functions }) {
+
+    try {
+
+        if (!element.localName) throw "required  tag name for element"
+
+        if (!(functions instanceof Array)) throw "required in type array for functions"
+
+        if (!functions.length) throw "required count in array > 0"
+
+        functions.forEach((fun, idx) => {
+            if (!(typeof fun === "function")) throw "required in type function in index : " + idx
+            if (!fun.name) throw "required in name function and function is found"
+            element.addEventListener("click", fun);
+        });
+
+    } catch (error) {
+        throw new Error(error)
+    }
+
+}
+
+
+
 
 /**
  *  this method is add event click in multiple elements and add same function
@@ -66,8 +96,6 @@ function clickElementsFunctions(array) {
 
     try {
 
-
-
         if (!(array instanceof Array)) throw "required in type array for elements"
 
         if (!array.length) throw "required count in array > 0"
@@ -83,9 +111,9 @@ function clickElementsFunctions(array) {
             if (!element.localName) throw "required  tag name for elements =>  is not defined elment in index : " + idx
 
             if (!(typeof fun === "function")) throw new Error("required in type function in index : " + idx)
-            
+
             if (!fun.name) throw new Error("required in name function and function is found")
-            
+
             element.addEventListener("click", fun);
         });
 
@@ -101,5 +129,6 @@ function clickElementsFunctions(array) {
 export {
     clickElement,
     clickElements,
-    clickElementsFunctions
+    clickElementsFunctions,
+    clickElementFunctions
 }
