@@ -1,4 +1,11 @@
 
+import { removeClass } from "../classCss/removeClass.m.js"
+import { hasClass } from '../classCss/hasClass.m.js'
+
+
+
+
+
 /**
  *  this method is  when the Element is add event listener  Focus
  *  element required element to listener Focus
@@ -127,6 +134,47 @@ function focusElementsFunctions(array) {
 
 
 
+/**
+ *  this method is add event focus in multiple element and add same function
+ *  and check if has class remove class 
+ *  elements required element to listener Focus
+ *  nameClass required function for excute on Focus 
+ */
+
+
+function focusElement_removeClass({ element, nameClass }) {
+
+    try {
+
+        if (!element.localName) throw "required  tag name for element"
+
+        if (!(typeof nameClass === "string")) throw "required in type string "
+
+        if (!nameClass.length) throw "required in name class is not empty"
+
+        element.addEventListener("focus", () => {
+
+            console.log("element")
+
+            if (!hasClass({ element: element, nameClass: nameClass }))
+                return;
+
+            removeClass({ el: element, nameClass: nameClass });
+
+        });
+
+    } catch (error) {
+        throw new Error(error)
+    }
+
+}
+
+
+
+
+
+
+
 
 
 
@@ -141,5 +189,6 @@ export {
     focusElement,
     focusElementFunctions,
     focusElements,
-    focusElementsFunctions
+    focusElementsFunctions,
+    focusElement_removeClass
 }
